@@ -6,7 +6,7 @@
       "carrier": "yumobile",
       "apnSettings": {
         "name": "yumobile",
-        "apn": name,
+        "apn": "yumobile",
         "username": "yumobile@yumobile.jp",
         "password": "yumobile"
       }
