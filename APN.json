@@ -5,8 +5,8 @@
       "phoneNumber": "080 8531 4407",
       "carrier": "yumobile",
       "apnSettings": {
-        "name": "yumobile",
-        "apn": "yumobile",
+        "name": "yumobile.jp",
+        "apn": "yumobile.jp",
         "username": "yumobile@yumobile.jp",
         "password": "yumobile"
       }
