@@ -1,0 +1,15 @@
+{
+  "hardwareInfo": [
+    [
+      "serialNumber": "KR59H68DLF6XWGUK": 
+      "phoneNumber": "080 8531 4407",
+      "carrier": "yumobile",
+      "apnSettings": {
+        "name": "yumobile",
+        "apn": name,
+        "username": "yumobile@yumobile.jp",
+        "password": "yumobile"
+      }
+    ]
+  ]
+}
