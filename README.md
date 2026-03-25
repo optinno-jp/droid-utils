@@ -4,33 +4,33 @@
 A command-line tool to manage Android device display/control using `adb`, `scrcpy`, and `uhubctl`.
 
 ## Features
-- `droid-open`: Launch `scrcpy` sessions for connected devices not already active
-- `droid-align`: Arrange all scrcpy windows on screen
-- `droid-swipe`: Simulate swipe-down on scrcpy windows via `pyautogui` (infinite loop by default, use `-c` to specify count)
-- `droid-recover`: Auto-recover `unauthorized` devices by toggling USB ports with `uhubctl`
+- `droidctl-open`: Launch `scrcpy` sessions for connected devices not already active
+- `droidctl-align`: Arrange all scrcpy windows on screen
+- `droidctl-swipe`: Simulate swipe-down on scrcpy windows via `pyautogui` (infinite loop by default, use `-c` to specify count)
+- `droidctl-recover`: Auto-recover `unauthorized` devices by toggling USB ports with `uhubctl`
 
 ## Quick Start
 
 ```bash
 # Launch scrcpy for connected devices
-droid-open
+droidctl-open
 
 # Arrange scrcpy windows
-droid-align
+droidctl-align
 
 # Infinite swipe loop (press Ctrl+C to stop)
-droid-swipe
+droidctl-swipe
 
 # Swipe loop with specific count
-droid-swipe -c 5
+droidctl-swipe -c 5
 
 # Recover unauthorized devices
-droid-recover
+droidctl-recover
 ```
 
 ## Commands
 
-### droid-open
+### droidctl-open
 Launch scrcpy sessions for all connected Android devices.
 
 **Options:**
@@ -41,9 +41,9 @@ Launch scrcpy sessions for all connected Android devices.
 
 **Examples:**
 ```bash
-droid-open              # Launch with default medium size
-droid-open -s           # Launch with small screen
-droid-open -l           # Launch with large screen
+droidctl-open              # Launch with default medium size
+droidctl-open -s           # Launch with small screen
+droidctl-open -l           # Launch with large screen
 ```
 
 **Notes:**
@@ -54,7 +54,7 @@ droid-open -l           # Launch with large screen
 
 ---
 
-### droid-align
+### droidctl-align
 Arrange all active scrcpy windows in a grid layout.
 
 **Options:**
@@ -62,7 +62,7 @@ Arrange all active scrcpy windows in a grid layout.
 
 **Examples:**
 ```bash
-droid-align             # Arrange all scrcpy windows
+droidctl-align             # Arrange all scrcpy windows
 ```
 
 **Details:**
@@ -73,7 +73,7 @@ droid-align             # Arrange all scrcpy windows
 
 ---
 
-### droid-swipe
+### droidctl-swipe
 Simulate swipe-down gestures on all scrcpy windows.
 
 **Options:**
@@ -82,9 +82,9 @@ Simulate swipe-down gestures on all scrcpy windows.
 
 **Examples:**
 ```bash
-droid-swipe             # Run infinite loop (Ctrl+C to stop)
-droid-swipe -c 5        # Run exactly 5 loops then exit
-droid-swipe --count 10  # Run exactly 10 loops then exit
+droidctl-swipe             # Run infinite loop (Ctrl+C to stop)
+droidctl-swipe -c 5        # Run exactly 5 loops then exit
+droidctl-swipe --count 10  # Run exactly 10 loops then exit
 ```
 
 **Behavior:**
@@ -99,7 +99,7 @@ droid-swipe --count 10  # Run exactly 10 loops then exit
 
 ---
 
-### droid-recover
+### droidctl-recover
 Auto-recover unauthorized Android devices by toggling USB ports.
 
 **Options:**
@@ -107,7 +107,7 @@ Auto-recover unauthorized Android devices by toggling USB ports.
 
 **Examples:**
 ```bash
-droid-recover           # Recover all unauthorized devices
+droidctl-recover           # Recover all unauthorized devices
 ```
 
 **Process:**
@@ -144,8 +144,8 @@ pip install .
 Each command provides detailed help with the `-h` or `--help` flag:
 
 ```bash
-droid-open --help      # Show available screen size options
-droid-align --help     # Show window alignment information
-droid-swipe --help     # Show swipe loop options and examples
-droid-recover --help   # Show recovery requirements and process
+droidctl-open --help      # Show available screen size options
+droidctl-align --help     # Show window alignment information
+droidctl-swipe --help     # Show swipe loop options and examples
+droidctl-recover --help   # Show recovery requirements and process
 ```
