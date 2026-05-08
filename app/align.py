@@ -1,6 +1,7 @@
 import pywinctl
 import subprocess
 import re
+import argparse
 from logzero import logger
 
 def run(args=None):
@@ -12,8 +13,7 @@ def run(args=None):
     expected_titles = []
     for device in connected:
         serial = device[0]
-        model = next((part[6:] for part in device if part.startswith("model:")), serial[-4:])
-        title = f"{model}_{serial[-4:]}"
+        title = f"{serial[-4:]}"
         expected_titles.append(title)
 
     logger.info(f"Looking for window titles: {expected_titles}")
@@ -69,7 +69,7 @@ def main():
                '  droid-align             # Arrange all scrcpy windows\n'
                '\n'
                'Window Detection:\n'
-               '  - Searches for windows with title format: {model}_{serial}\n'
+               '  - Searches for windows with title format: {serial}\n'
                '  - Only processes windows launched by scrcpy\n'
                '\n'
                'Grid Layout:\n'
@@ -86,4 +86,3 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
     run()
-
