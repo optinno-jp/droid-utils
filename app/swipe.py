@@ -47,7 +47,7 @@ def run(args=None):
 
 def get_coordinates():
     coordinate = []
-    windows = [w for w in pywinctl.getAllWindows() if '_' in w.title and len(w.title) >= 5]
+    windows = [w for w in pywinctl.getAllWindows() if len(w.title) == 4]
 
     for win in windows:
         try:
@@ -95,7 +95,7 @@ def main():
                '\n'
                'Requirements:\n'
                '  - Active scrcpy windows must be visible on screen\n'
-               '  - Windows must have title format: {model}_{serial}',
+               '  - Windows must have title format: {serial}',
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
     parser.add_argument(
@@ -111,4 +111,3 @@ def main():
     except KeyboardInterrupt:
         logger.info("\nSwipe loop interrupted by user. Exiting.")
         exit(0)
-
