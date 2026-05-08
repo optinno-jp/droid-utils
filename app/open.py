@@ -51,8 +51,7 @@ def run(args):
             logger.info(f"scrcpy already running for {serial}, skipping.")
             continue
 
-        model = next((part[6:] for part in device if part.startswith("model:")), serial[-4:])
-        title = f"{model}_{serial[-4:]}"
+        title = f"{serial[-4:]}"
         cmd = [
             "scrcpy", "-s", serial,
             "--stay-awake", "--no-audio",
@@ -97,7 +96,7 @@ def main():
                '\n'
                'Notes:\n'
                '  - Devices already running scrcpy will be skipped\n'
-               '  - Window title format: {model}_{serial_last_4_digits}\n'
+               '  - Window title format: {serial_last_4_digits}\n'
                '  - Audio is disabled by default for performance\n'
                '  - Video bitrate: 128K, Max FPS: 15\n'
                '  - Requires: adb and scrcpy installed and configured',
